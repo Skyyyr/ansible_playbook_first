@@ -1,0 +1,13 @@
+---
+- name: Remove Apache
+  hosts: webservers
+  become: true
+  
+  tasks:
+    - name: Remove Apache
+      package:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - httpd
+        - apache2

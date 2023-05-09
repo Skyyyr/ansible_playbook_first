@@ -1,0 +1,8 @@
+---
+- name: Create guest user
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Add guest user
+      user:
+        name: guest

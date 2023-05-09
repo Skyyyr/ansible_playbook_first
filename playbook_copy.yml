@@ -1,0 +1,9 @@
+---
+- name: Create and copy hello-devops.html file
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Copy hello-devops.html file to web servers
+      copy:
+        src: ./hello-devops.html
+        dest: /var/www/html/
